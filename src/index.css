@@ -4,6 +4,8 @@
 
 /* index.css or App.css */
 * {
-    font-family: 'Rubik', sans-serif; /* Default font for body text */
-
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}

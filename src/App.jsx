@@ -19,6 +19,8 @@ import User_profile from './Pages/User_profile/User_profile'
 import Libraryy from './Pages/Library/Libraryy'
 import Refer_Earn from './Pages/Refer_Earn/Refer_Earn'
 import SuperAdmin from './Pages/SuperAdmin/SuperAdmin'
+import UserDashboard from './Pages/UserDashboard/UserDashboard'
+import Instrcuro_Daboard from './Pages/Intructor_Dashabord/Instrcuro_Daboard'
 const App = () => {
   return (
     <Router>
@@ -31,7 +33,7 @@ const AppContent = () => {
   const location = useLocation()
 
   // Check if the current route is '/profile/:id' or '/system-control'
-  const hideNavbarFooter = ['/profile/', '/system-control'].some(route => location.pathname.includes(route))
+  const hideNavbarFooter = ['/profile/', '/system-control','/userdashbaord','/instructordashbaord'].some(route => location.pathname.includes(route))
 
   return (
     <>
@@ -45,6 +47,8 @@ const AppContent = () => {
         <Route path="/event/:id" element={<Details_Of_Event />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/userdashbaord" element={<UserDashboard/>} />
+        <Route path="/instructordashbaord" element={<Instrcuro_Daboard/>} />
         <Route path="/termscondition" element={<Privacy_Policy />} />
         <Route path="/Library" element={<Libraryy />} />
         <Route path="/certificate" element={<Certificate />} />
@@ -52,14 +56,11 @@ const AppContent = () => {
         <Route path="/instructor/:id" element={<Instrcutor_Details />} />
         <Route path="/tutorial/:name" element={<Tutorial_Details />} />
         <Route path="/cart" element={<CART />} />
-        <Route path="/cart" element={<CART />} />
         {/* Protected Route */}
         <Route
           path="/system-control"
           element={
-            // <ProtectedRoute>
               <SuperAdmin />
-            // </ProtectedRoute>
           }
         />
         <Route path="/profile/:id" element={<User_profile />} />
